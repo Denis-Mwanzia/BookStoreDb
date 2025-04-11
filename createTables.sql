@@ -72,3 +72,9 @@ CREATE TABLE address (
     countryID INT,
     FOREIGN KEY (countryID) REFERENCES country(countryID)
 );
+
+-- Create addressStatus
+CREATE TABLE addressStatus (
+    statusID INT PRIMARY KEY AUTO_INCREMENT,
+    statusName VARCHAR(100) NOT NULL
+);
