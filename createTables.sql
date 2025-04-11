@@ -62,3 +62,13 @@ CREATE TABLE country (
     countryID INT PRIMARY KEY AUTO_INCREMENT,
     countryName VARCHAR(100) NOT NULL
 );
+
+-- Create address Table
+CREATE TABLE address (
+    addressID INT PRIMARY KEY AUTO_INCREMENT,
+    street VARCHAR(255) NOT NULL,
+    city VARCHAR(100) NOT NULL,
+    zipCode VARCHAR(20) NOT NULL,
+    countryID INT,
+    FOREIGN KEY (countryID) REFERENCES country(countryID)
+);
