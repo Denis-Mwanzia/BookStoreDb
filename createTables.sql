@@ -36,3 +36,12 @@ CREATE TABLE book (
     FOREIGN KEY (languageID) REFERENCES bookLanguage(languageID),
     CONSTRAINT chk_valid_price CHECK (price >= 0)
 );
+
+-- Create bookAuthor Table
+CREATE TABLE bookAuthor (
+    authorID INT,
+    bookID INT,
+    PRIMARY KEY (authorID, bookID),
+    FOREIGN KEY (authorID) REFERENCES author(authorID),
+    FOREIGN KEY (bookID) REFERENCES book(bookID)
+);
