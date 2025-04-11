@@ -89,3 +89,12 @@ CREATE TABLE customerAddress (
     FOREIGN KEY (addressID) REFERENCES address(addressID),
     FOREIGN KEY (statusID) REFERENCES addressStatus(statusID)
 );
+
+-- Create shippingStatus
+CREATE TABLE shipping_method (
+    methodID INT PRIMARY KEY AUTO_INCREMENT,
+    methodName VARCHAR(100) NOT NULL UNIQUE,
+    cost DECIMAL(10,2) NOT NULL CHECK (cost >= 0),
+    createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
