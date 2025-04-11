@@ -91,7 +91,7 @@ CREATE TABLE customerAddress (
 );
 
 -- Create shippingStatus Table
-CREATE TABLE shipping_method (
+CREATE TABLE shippingMethod (
     methodID INT PRIMARY KEY AUTO_INCREMENT,
     methodName VARCHAR(100) NOT NULL UNIQUE,
     cost DECIMAL(10,2) NOT NULL CHECK (cost >= 0),
@@ -103,4 +103,18 @@ CREATE TABLE shipping_method (
 CREATE TABLE orderStatus (
     statusID INT PRIMARY KEY AUTO_INCREMENT,
     statusValue VARCHAR(100) NOT NULL
+);
+
+-- Create customerOrder
+CREATE TABLE customerOrder (
+    orderID INT PRIMARY KEY AUTO_INCREMENT,
+    orderDate DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    customerID INT NOT NULL,
+    statusID INT NOT NULL,
+    methodID INT NOT NULL,
+    createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (customerID) REFERENCES customer(customerID) ON DELETE RESTRICT,    
+    FOREIGN KEY (statusID) REFERENCES orderStatus(statusID) ON UPDATE CASCADE,       
+    FOREIGN KEY (methodID) REFERENCES shippingMethod(methodID) ON UPDATE CASCADE
 );
