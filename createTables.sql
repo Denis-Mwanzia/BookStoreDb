@@ -78,3 +78,14 @@ CREATE TABLE addressStatus (
     statusID INT PRIMARY KEY AUTO_INCREMENT,
     statusName VARCHAR(100) NOT NULL
 );
+
+-- Create customerAddress
+CREATE TABLE customerAddress (
+    customerID INT,
+    addressID INT,
+    statusID INT,
+    PRIMARY KEY (customerID, addressID),
+    FOREIGN KEY (customerID) REFERENCES customer(customerID),
+    FOREIGN KEY (addressID) REFERENCES address(addressID),
+    FOREIGN KEY (statusID) REFERENCES addressStatus(statusID)
+);
