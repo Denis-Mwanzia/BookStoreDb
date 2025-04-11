@@ -79,7 +79,7 @@ CREATE TABLE addressStatus (
     statusName VARCHAR(100) NOT NULL
 );
 
--- Create customerAddress
+-- Create customerAddress Table
 CREATE TABLE customerAddress (
     customerID INT,
     addressID INT,
@@ -90,11 +90,17 @@ CREATE TABLE customerAddress (
     FOREIGN KEY (statusID) REFERENCES addressStatus(statusID)
 );
 
--- Create shippingStatus
+-- Create shippingStatus Table
 CREATE TABLE shipping_method (
     methodID INT PRIMARY KEY AUTO_INCREMENT,
     methodName VARCHAR(100) NOT NULL UNIQUE,
     cost DECIMAL(10,2) NOT NULL CHECK (cost >= 0),
     createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+-- Create orderStatus Table
+CREATE TABLE orderStatus (
+    statusID INT PRIMARY KEY AUTO_INCREMENT,
+    statusValue VARCHAR(100) NOT NULL
 );
