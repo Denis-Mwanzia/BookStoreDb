@@ -142,5 +142,5 @@ CREATE TABLE orderHistory (
     FOREIGN KEY (statusID) REFERENCES orderStatus(statusID)
 );
 
--- Confirm Tables in bookStore Database
+-- Confirm Tables in bookStoreDb
 SHOW TABLES;
