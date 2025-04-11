@@ -105,7 +105,7 @@ CREATE TABLE orderStatus (
     statusValue VARCHAR(100) NOT NULL
 );
 
--- Create customerOrder
+-- Create customerOrder Table
 CREATE TABLE customerOrder (
     orderID INT PRIMARY KEY AUTO_INCREMENT,
     orderDate DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -119,7 +119,7 @@ CREATE TABLE customerOrder (
     FOREIGN KEY (methodID) REFERENCES shippingMethod(methodID) ON UPDATE CASCADE
 );
 
--- Create orderLine
+-- Create orderLine Table
 CREATE TABLE orderLine (
     bookID INT NOT NULL,
     orderID INT NOT NULL,
@@ -130,4 +130,14 @@ CREATE TABLE orderLine (
     PRIMARY KEY (bookID, orderID),
     FOREIGN KEY (bookID) REFERENCES book(bookID) ON DELETE RESTRICT ON UPDATE CASCADE,     
     FOREIGN KEY (orderID) REFERENCES customerOrder(orderID) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+-- Create orderHistory
+CREATE TABLE orderHistory (
+    historyID INT PRIMARY KEY AUTO_INCREMENT,
+    orderID INT,
+    statusID INT,
+    timeStamp DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (orderID) REFERENCES customerOrder(orderID),
+    FOREIGN KEY (statusID) REFERENCES orderStatus(statusID)
 );
