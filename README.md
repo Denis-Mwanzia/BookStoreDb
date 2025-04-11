@@ -152,12 +152,13 @@ The Entity-Relationship diagram shows the key relationships between entities lik
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/your-username/bookstore-database.git
-   cd bookstore-database
-2. Open MySQL client.
-3. Run the SQL script:
-   ```SOURCE create_tables.sql;
-4. 
+   git https://github.com/Denis-Mwanzia/BookStoreDb.git
+2. Open MySQL workbench
+3. click on ```File2``` then select and click on ```Open SQL Script```
+4. Select and open the folder ```BookStoreDb``` and select ```createDatabase.sql``` then click on open
+5. Run the script
+6. Repeat step 3 and 4 but select and open  ```createTables.sql``` then step 5
+
 
 
 ---
