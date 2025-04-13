@@ -15,4 +15,22 @@ GRANT SELECT, INSERT, UPDATE ON BookStoreDB.* TO 'sales';
 GRANT SELECT ON BookStoreDB.* TO 'customer';
 
 
+-- Creating users and assigning role
+
+-- Create users
+CREATE USER 'admin1'@'localhost' IDENTIFIED BY 'admin@pass1';
+CREATE USER 'admin2'@'localhost' IDENTIFIED BY 'admin@pass2';
+CREATE USER 'sales1'@'localhost' IDENTIFIED BY 'sales@pass1';
+CREATE USER 'sales2'@'localhost' IDENTIFIED BY 'sales@pass2';
+CREATE USER 'customer1'@'localhost' IDENTIFIED BY 'customer@pass1';
+CREATE USER 'customer2'@'localhost' IDENTIFIED BY 'customer@pass2';
+
+-- Assign roles
+GRANT 'admin' TO 'admin1'@'localhost';
+GRANT 'admin' TO 'admin2'@'localhost';
+GRANT 'sales' TO 'sales1'@'localhost';
+GRANT 'sales' TO 'sales2'@'localhost';
+GRANT 'customer' TO 'customer1'@'localhost';
+GRANT 'customer' TO 'customer2'@'localhost';
+
 
