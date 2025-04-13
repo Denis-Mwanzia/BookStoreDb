@@ -34,3 +34,16 @@ GRANT 'customer' TO 'customer1'@'localhost';
 GRANT 'customer' TO 'customer2'@'localhost';
 
 
+-- Set Default Roles
+
+-- Set default roles for Admin users
+SET DEFAULT ROLE 'admin' TO 'admin1'@'localhost';
+SET DEFAULT ROLE 'admin' TO 'admin2'@'localhost';
+
+-- Set default roles for Sales users
+SET DEFAULT ROLE 'sales' TO 'sales1'@'localhost';
+SET DEFAULT ROLE 'sales' TO 'sales2'@'localhost';
+
+-- Set default roles for Customer users
+SET DEFAULT ROLE 'customer' TO 'customer1'@'localhost';
+SET DEFAULT ROLE 'customer' TO 'customer2'@'localhost';
