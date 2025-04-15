@@ -159,7 +159,7 @@ The Entity-Relationship diagram shows the key relationships between entities lik
 5. Run the script
 6. Repeat step 3 and 4 but select and open  ```createTables.sql``` then step 5
 
-
+***Repeat the same procedure for all the other files***
 
 ---
 
